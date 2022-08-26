@@ -16,7 +16,7 @@ class StudentForm(forms.ModelForm):
                 "last_name", 
                 "number", 
                 "profile_pic"
-                ]
+                ] 
         labels = {
             "first_name": "Name"
             }

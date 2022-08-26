@@ -2,6 +2,7 @@ from django.shortcuts import render,redirect
 
 from student.models import Student
 from .forms import StudentForm
+from django.contrib import messages
 
 # Create your views here.
 def index(request):
@@ -45,6 +46,7 @@ def student_page(request):
         form = StudentForm(request.POST, request.FILES)
         if form.is_valid:
             form.save()
+            messages.success(request, 'Student Added Succesfully')
             return redirect('index')
     context = {
         'form':form

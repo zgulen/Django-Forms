@@ -1,7 +1,7 @@
 {% extends "student/base.html" %} {% block container %}
+{% load crispy_forms_tags %}
 <form action="" method="POST" enctype="multipart/form-data">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="OK" />
+    {% csrf_token %} {% comment %}  {{ form.as_p }} {% endcomment %} {{ form  | crispy}}
+    <input type="submit" value="OK" class="btn btn-dark mt-3" />
 </form>
 {% endblock container %}
